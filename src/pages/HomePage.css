@@ -1,0 +1,57 @@
+/* ---------- Bienvenida y Frodo ---------- */
+
+.welcome-section {
+  margin-top: 2rem;
+}
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  max-width: 1000px;
+}
+
+.frodo-image {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.frodo-image:hover {
+  transform: scale(1.05);
+}
+
+.text-content {
+  max-width: 700px;
+  text-align: left;
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+  color: #c58e3c;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+
+
+
+/* ---------- Cita ---------- */
+
+.quote {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #c58e3c;
+  border-left: 4px solid #6b644b;
+  padding-left: 1rem;
+}
+
+

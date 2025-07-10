@@ -1,0 +1,45 @@
+body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Uncial Antiqua', serif;
+  background-image: url("./assets/FondoSeñorDeLosAnillos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* para que el fondo quede fijo al hacer scroll */
+  cursor: url('./assets/cursor.cur') 16 16, auto;
+
+}
+
+.parrafo {
+   font-size: 1.3rem;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  color: #f5f1dc; /* más claro y contrastante */
+  margin: 1rem 0;
+  text-align: left;
+  text-shadow: 1px 1px 2px #000000; /* para mejorar visibilidad sobre fondos claros u oscuros */
+}
+
+h1 {
+  text-align: center;
+  color: #c58e3c;
+}
+
+
+.text-content-comunidad{
+display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  max-width: 1000px;
+  font-family: 'Merriweather', serif; /* nueva fuente para párrafos */
+  font-size: 1rem;
+  color: #f5f1dc;
+  text-shadow: 1px 1px 2px #000;
+
+}
+
