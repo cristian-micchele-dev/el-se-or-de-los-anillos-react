@@ -35,7 +35,7 @@ Cloná el repositorio:
 bash
 Copiar
 Editar
-git clone https://github.com/https://github.com/cristian-micchele-dev/lotr-react.git
+git clone https://github.com/cristian-micchele-dev/el-se-or-de-los-anillos-react
 Instalá las dependencias:
 
 bash
