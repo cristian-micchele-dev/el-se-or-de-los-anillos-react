@@ -47,10 +47,7 @@ function HomePage() {
             
             <div className="story-content">
               <p className="story-text">
-                <span className="story-highlight">El Señor de los Anillos</span> es una saga de fantasía épica que narra el viaje de 
-                <span className="character-name">Frodo Bolsón</span>, un hobbit destinado a destruir el 
-                <span className="item-highlight">Anillo Único</span> y vencer al malvado 
-                <span className="villain-name">Sauron</span>. Acompañado por valientes héroes, su travesía marcará el destino de la Tierra Media.
+                <span className="story-highlight">El Señor de los Anillos</span> es una saga de fantasía épica que narra el viaje de <span className="character-name">Frodo Bolsón</span>, un hobbit destinado a destruir el <span className="item-highlight">Anillo Único</span> y vencer al malvado <span className="villain-name">Sauron</span>. Acompañado por valientes héroes, su travesía marcará el destino de la Tierra Media.
               </p>
             </div>
           </div>
