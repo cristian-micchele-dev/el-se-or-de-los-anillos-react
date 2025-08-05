@@ -1,0 +1,28 @@
+:root {
+  /* Colores principales */
+  --color-gold-primary: #d4af37;
+  --color-gold-secondary: #c58e3c;
+  --color-cream: #f5f1dc;
+  --color-dark: #000000;
+  --color-dark-secondary: #141414;
+  
+  /* Espaciados */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  
+  /* Tipografías */
+  --font-title: 'Cinzel', serif;
+  --font-subtitle: 'Uncial Antiqua', serif;
+  --font-body: 'Merriweather', serif;
+  --font-decorative: 'Cormorant Garamond', serif;
+  
+  /* Efectos */
+  --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 15px 40px rgba(212, 175, 55, 0.3);
+  --border-gold: 1px solid var(--color-gold-primary);
+  --gradient-dark: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 20, 20, 0.8) 100%);
+  --backdrop-blur: blur(5px);
+}

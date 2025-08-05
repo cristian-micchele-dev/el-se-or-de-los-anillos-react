@@ -1,3 +1,6 @@
+@import '../styles/variables.css';
+@import '../styles/mixins.css';
+
 .principal-container-personaje {
   width: 100%;
   margin: 0 auto;
@@ -14,61 +17,87 @@
 }
 
 .personaje-card {
+  /* Estilos base de card */
+  border-radius: 15px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s ease;
+  backdrop-filter: var(--backdrop-blur);
+  
+  /* Estilos específicos de la card */
   height: 350px;
   position: relative;
-  border-radius: 15px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  
+  /* Overlay elegante sobre la imagen */
+  background-blend-mode: overlay;
+}
+
+/* Overlay oscuro sobre la imagen */
+.personaje-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.3) 0%, 
+    rgba(20, 20, 20, 0.5) 50%, 
+    rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Estrella decorativa */
+.personaje-card::before {
+  content: '✦';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: var(--color-gold-primary);
+  font-size: 1.2rem;
+  opacity: 0.8;
+  animation: twinkle 2s ease-in-out infinite alternate;
+  z-index: 3;
 }
 
 .personaje-card:hover {
   transform: translateY(-10px) scale(1.02);
-  border-color: #d4af37;
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+  border-color: var(--color-gold-primary);
+  box-shadow: var(--shadow-hover);
 }
 
-.personaje-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top, 
-    rgba(0, 0, 0, 0.9) 0%, 
-    rgba(0, 0, 0, 0.4) 50%,
-    transparent 100%
-  );
-  transition: background 0.3s ease;
+.personaje-card:hover::after {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.2) 0%, 
+    rgba(20, 20, 20, 0.4) 50%, 
+    rgba(0, 0, 0, 0.2) 100%);
 }
 
-.personaje-card:hover .personaje-overlay {
-  background: linear-gradient(
-    to top, 
-    rgba(0, 0, 0, 0.8) 0%, 
-    rgba(0, 0, 0, 0.2) 70%,
-    transparent 100%
-  );
-}
-
+/* Contenido de la card */
 .personaje-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 1.5rem;
-  color: #f5f1dc;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--color-cream);
   z-index: 2;
 }
 
 .personaje-content h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #d4af37;
+  /* Aplicar estilos de .text-gold manualmente */
+  color: var(--color-gold-primary);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
 }
 
 .personaje-content p {

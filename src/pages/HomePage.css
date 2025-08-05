@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+@import '../styles/variables.css';
+@import '../styles/mixins.css';
 
 /* ======== CONTENEDOR PRINCIPAL SIN FONDO ======== */
 .home-container {
   min-height: 100vh;
-  background: transparent; /* Eliminado el fondo negro */
+  background: transparent;
   position: relative;
   overflow-x: hidden;
 }
 
 /* ======== HERO SECTION ======== */
-/* ======== HERO SECTION CON FONDO NEGRO SÓLIDO ======== */
 .hero-section {
-  min-height: 60vh; /* Cambiado de 80vh a 60vh */
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 20, 20, 0.8) 100%);
-  /* Fondo más suave y elegante */
+  background: var(--gradient-dark);
 }
 
 .hero-background {
@@ -212,25 +212,35 @@
 
 /* ======== SECCIÓN DE HISTORIA ======== */
 /* Espaciado más consistente */
-/* ELIMINAR la definición duplicada de la línea 215-223 */
-/* ELIMINAR esta sección completa: */
-/*
+/* ELIMINAR LOS @import DE AQUÍ - YA ESTÁN AL INICIO */
+
+/* MANTENER SOLO UNA DEFINICIÓN DE .hero-section */
 .hero-section {
   min-height: 60vh;
-  padding: 3rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 3rem 1rem;
-  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: var(--gradient-dark);
 }
-*/
+
+/* ELIMINAR todas las otras definiciones duplicadas */
+/* ELIMINAR líneas 215-223, 457-475, 485-495, 590+ */
+
 .story-section {
-  padding: 4rem 1rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  @extend .section-padding;
+  background: var(--gradient-dark);
+  border-top: var(--border-gold);
+  border-bottom: var(--border-gold);
+}
+
+.quote {
+  @extend .card-base;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: var(--spacing-lg) var(--spacing-md);
+  margin: var(--spacing-md) 0;
 }
 
 .story-container {

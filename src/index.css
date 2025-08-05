@@ -1,3 +1,8 @@
+@import './styles/fonts.css';
+@import './styles/variables.css';
+@import './styles/mixins.css';
+@import './styles/animations.css';
+
 * {
   box-sizing: border-box;
 }
@@ -5,7 +10,7 @@
 body, #root {
   height: 100%;
   margin: 0;
-  font-family: 'Uncial Antiqua', serif;
+  font-family: var(--font-subtitle);
   background-image: url("./assets/FondoSeñorDeLosAnillos.jpg");
   background-size: cover;
   background-position: center;
@@ -13,6 +18,22 @@ body, #root {
   background-attachment: fixed;
   cursor: url('./assets/cursor.cur') 16 16, auto;
   overflow-x: hidden;
+}
+
+/* ELIMINAR duplicación de .text-content-comunidad */
+.text-content-comunidad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) auto;
+  padding: 0 var(--spacing-sm);
+  max-width: 1000px;
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--color-cream);
+  text-shadow: 1px 1px 2px var(--color-dark);
 }
 
 .parrafo {

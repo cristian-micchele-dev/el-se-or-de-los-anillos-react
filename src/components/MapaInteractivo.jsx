@@ -114,8 +114,26 @@ function MapaInteractivo() {
     }
   };
 
+  // Información del Río Anduin
+  const rioAnduin = {
+    nombre: "Río Anduin",
+    descripcion: "El Gran Río que fluye desde las Montañas Nubladas hasta el Mar, dividiendo la Tierra Media.",
+    icono: '🌊',
+    detalles: {
+      longitud: "1,388 millas",
+      origen: "Montañas Nubladas",
+      desembocadura: "Bahía de Belfalas"
+    },
+    historia: "El Anduin, conocido como el Gran Río, es la arteria fluvial más importante de la Tierra Media. Nace en las Montañas Nubladas y fluye hacia el sur durante 1,388 millas hasta desembocar en la Bahía de Belfalas. Sus aguas han sido testigo de innumerables eventos históricos: Isildur perdió el Anillo Único en sus corrientes tras la Batalla de los Campos Gladios, Boromir encontró aquí su destino heroico defendiendo a Merry y Pippin, y sus orillas vieron el paso de ejércitos y refugiados a lo largo de las edades. El río divide naturalmente la Tierra Media, separando Rohan y Gondor de Rhovanion y las tierras del este. Sus afluentes incluyen el Mitheithel, el Bruinen y el Celebros, y sus aguas alimentan las majestuosas Cataratas del Rauros donde la Comunidad del Anillo se dividió para siempre."
+  };
+
   const manejarClickLugar = (lugar) => {
     setLugarSeleccionado(lugar);
+  };
+
+  // Función específica para el río
+  const manejarClickRio = () => {
+    setLugarSeleccionado(rioAnduin);
   };
 
   const manejarMouseEnter = (evento, lugar) => {
@@ -125,6 +143,16 @@ function MapaInteractivo() {
       y: evento.clientY
     });
     setLugarSeleccionado(lugar);
+  };
+
+  // Función específica para el río
+  const manejarMouseEnterRio = (evento) => {
+    setMostrarTooltip(true);
+    setPosicionTooltip({
+      x: evento.clientX,
+      y: evento.clientY
+    });
+    setLugarSeleccionado(rioAnduin);
   };
 
   const manejarMouseLeave = () => {
@@ -148,7 +176,7 @@ function MapaInteractivo() {
     <div className="mapa-interactivo-container">
       <div className="mapa-titulo">
         <h2>🗺️ Mapa Interactivo de la Tierra Media</h2>
-        <p>Haz clic en los lugares para explorar información detallada</p>
+        <p>Haz clic en los lugares y el río para explorar información detallada</p>
       </div>
       
       <div 
@@ -159,7 +187,13 @@ function MapaInteractivo() {
         <div className="mapa-fondo">
           <div className="montanas-nubladas"></div>
           <div className="montanas-blancas"></div>
-          <div className="rio-anduin"></div>
+          <div 
+            className="rio-anduin"
+            onClick={manejarClickRio}
+            onMouseEnter={manejarMouseEnterRio}
+            onMouseLeave={manejarMouseLeave}
+            title="Río Anduin - Haz clic para más información"
+          ></div>
         </div>
 
         {/* Lugares interactivos */}
@@ -217,18 +251,42 @@ function MapaInteractivo() {
           <div className="panel-contenido">
             <p className="descripcion">{lugarSeleccionado.descripcion}</p>
             <div className="detalles-grid">
-              <div className="detalle-item">
-                <span className="detalle-label">👥 Población:</span>
-                <span className="detalle-valor">{lugarSeleccionado.detalles.poblacion}</span>
-              </div>
-              <div className="detalle-item">
-                <span className="detalle-label">🌤️ Clima:</span>
-                <span className="detalle-valor">{lugarSeleccionado.detalles.clima}</span>
-              </div>
-              <div className="detalle-item">
-                <span className="detalle-label">⭐ Característica:</span>
-                <span className="detalle-valor">{lugarSeleccionado.detalles.caracteristica}</span>
-              </div>
+              {lugarSeleccionado.detalles.poblacion && (
+                <div className="detalle-item">
+                  <span className="detalle-label">👥 Población:</span>
+                  <span className="detalle-valor">{lugarSeleccionado.detalles.poblacion}</span>
+                </div>
+              )}
+              {lugarSeleccionado.detalles.clima && (
+                <div className="detalle-item">
+                  <span className="detalle-label">🌤️ Clima:</span>
+                  <span className="detalle-valor">{lugarSeleccionado.detalles.clima}</span>
+                </div>
+              )}
+              {lugarSeleccionado.detalles.caracteristica && (
+                <div className="detalle-item">
+                  <span className="detalle-label">⭐ Característica:</span>
+                  <span className="detalle-valor">{lugarSeleccionado.detalles.caracteristica}</span>
+                </div>
+              )}
+              {lugarSeleccionado.detalles.longitud && (
+                <div className="detalle-item">
+                  <span className="detalle-label">📏 Longitud:</span>
+                  <span className="detalle-valor">{lugarSeleccionado.detalles.longitud}</span>
+                </div>
+              )}
+              {lugarSeleccionado.detalles.origen && (
+                <div className="detalle-item">
+                  <span className="detalle-label">🏔️ Origen:</span>
+                  <span className="detalle-valor">{lugarSeleccionado.detalles.origen}</span>
+                </div>
+              )}
+              {lugarSeleccionado.detalles.desembocadura && (
+                <div className="detalle-item">
+                  <span className="detalle-label">🌊 Desembocadura:</span>
+                  <span className="detalle-valor">{lugarSeleccionado.detalles.desembocadura}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -265,6 +323,10 @@ function MapaInteractivo() {
             <div className="leyenda-punto"></div>
             <span>Lugares importantes</span>
           </div>
+          <div className="leyenda-item">
+            <div className="leyenda-rio">🌊</div>
+            <span>Río Anduin (interactivo)</span>
+          </div>
         </div>
         
         {/* Botón para mostrar historias */}
@@ -283,6 +345,17 @@ function MapaInteractivo() {
         <div className="historias-container">
           <h3 className="historias-titulo">📜 Historias de la Tierra Media</h3>
           <div className="historias-grid">
+            {/* Historia del río */}
+            <div className="historia-card">
+              <div className="historia-header">
+                <span className="historia-icono">{rioAnduin.icono}</span>
+                <h4 className="historia-nombre">{rioAnduin.nombre}</h4>
+              </div>
+              <div className="historia-contenido">
+                <p className="historia-texto">{rioAnduin.historia}</p>
+              </div>
+            </div>
+            {/* Historias de los lugares */}
             {Object.entries(lugares).map(([key, lugar]) => (
               <div key={key} className="historia-card">
                 <div className="historia-header">

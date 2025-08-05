@@ -1,0 +1,22 @@
+/* Mixins para efectos comunes */
+.card-base {
+  border-radius: 15px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s ease;
+  backdrop-filter: var(--backdrop-blur);
+}
+
+.card-hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--color-gold-primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.text-gold {
+  color: var(--color-gold-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.section-padding {
+  padding: var(--spacing-xl) var(--spacing-sm);
+}
