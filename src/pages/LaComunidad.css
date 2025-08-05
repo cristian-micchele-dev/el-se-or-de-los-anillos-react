@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua&family=Merriweather:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ======== PÁGINA LA COMUNIDAD ======== */
+
+.comunidad-main {
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* ======== HERO SECTION SIMPLIFICADO ======== */
+.comunidad-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 20, 20, 0.8) 100%);
+  border-bottom: 1px solid rgba(197, 142, 60, 0.3);
+}
+
+.hero-content {
+  text-align: center;
+  color: #f5f1dc;
+  max-width: 800px;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1.5rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title-highlight {
+  color: #c58e3c;
+  font-weight: 600;
+}
+
+.title-subtitle {
+  color: #f5f1dc;
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+.hero-description {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(197, 142, 60, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  border-color: #c58e3c;
+  box-shadow: 0 5px 15px rgba(197, 142, 60, 0.2);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c58e3c;
+  font-family: 'Cinzel', serif;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #f5f1dc;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Merriweather', serif;
+}
+
+/* ======== DESCRIPCIÓN SECTION ======== */
+.descripcion-section {
+  padding: 4rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(197, 142, 60, 0.2);
+}
+
+.descripcion-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.descripcion-container h2 {
+  color: #c58e3c;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.descripcion-texto {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.8;
+  color: #f5f1dc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  opacity: 0.9;
+}
+
+/* ======== CITA ÉPICA ======== */
+.cita-section {
+  padding: 4rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.cita-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cita-epica {
+  position: relative;
+  padding: 2.5rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(197, 142, 60, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.cita-epica::before {
+  content: '"';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 3rem;
+  color: #c58e3c;
+  font-family: 'Cinzel', serif;
+  opacity: 0.7;
+}
+
+.cita-texto {
+  display: block;
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #f5f1dc;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cita-autor {
+  display: block;
+  font-size: 1rem;
+  color: #c58e3c;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-family: 'Cinzel', serif;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .comunidad-hero {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .stat-item {
+    padding: 0.8rem 1rem;
+    min-width: 120px;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .descripcion-section,
+  .cita-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    width: 150px;
+  }
+  
+  .cita-epica {
+    padding: 2rem 1.5rem;
+  }
+  
+  .descripcion-section,
+  .cita-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ======== ELIMINAR TODA ESTA SECCIÓN ======== */
+/* 
+.filtros-section {
+  padding: 3rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.filtros-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filtros-container h3 {
+  color: #c58e3c;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.filtros-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(197, 142, 60, 0.3);
+  border-radius: 25px;
+  color: #f5f1dc;
+  font-family: 'Merriweather', serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+  background: rgba(197, 142, 60, 0.2);
+  border-color: #c58e3c;
+  color: #c58e3c;
+  box-shadow: 0 4px 15px rgba(197, 142, 60, 0.3);
+  transform: translateY(-2px);
+}
+*/

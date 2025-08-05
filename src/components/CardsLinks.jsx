@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import './CardsLinks.css'; // si querés estilos específicos para las cards
+import './CardsLinks.css';
 
 import LaComunidadImage from '../assets/LaComunidad.jpg';
 import LugaresImage from '../assets/Lugares.jpg';
 import AnillosDelPoderImage from '../assets/AnillosDelPoder.jpg';
-import LibrosyPeliculas from '../assets/librosypeliculas.jpeg';
+// Eliminar esta línea:
+// import LibrosyPeliculas from '../assets/librosypeliculas.jpeg';
 
 function CardsLinks() {
   const cards = [
@@ -26,12 +27,15 @@ function CardsLinks() {
       description: "Descubre la historia de los Anillos y su poder.",
       bgImage: AnillosDelPoderImage,
     },
+    // Eliminar este objeto completo:
+    /*
     {
       title: "Películas y Libros",
       to: "/peliculas-libros",
       description: "Sumérgete en las adaptaciones y la literatura original.",
       bgImage: LibrosyPeliculas,
     },
+    */
   ];
 
   return (

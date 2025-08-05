@@ -4,15 +4,12 @@ import HomePage from './pages/HomePage';
 import LaComunidad from './pages/LaComunidad';
 import Lugares from './pages/Lugares';
 import AnillosDelPoder from './pages/AnillosDelPoder';
-import PeliculasLibros from './pages/PeliculasLibros';
-
+// Eliminar esta línea:
+// import PeliculasLibros from './pages/PeliculasLibros';
 
 import './App.css'
 
-
 function App() {
-
-
   return (
     <>
       <Routes>
@@ -20,10 +17,9 @@ function App() {
         <Route path="/la-comunidad" element={<LaComunidad />} />
         <Route path="/lugares" element={<Lugares />} />
         <Route path="/anillos-del-poder" element={<AnillosDelPoder />} />
-        <Route path="/peliculas-libros" element={<PeliculasLibros />} />
-        
+        {/* Eliminar esta línea: */}
+        {/* <Route path="/peliculas-libros" element={<PeliculasLibros />} /> */}
       </Routes>
-     
     </>
   )
 }
