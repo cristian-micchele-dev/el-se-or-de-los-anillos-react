@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua&family=Merriweather:ital,wght@0,400;0,600;1,400&display=swap');
+/* ELIMINAR esta línea: */
+/* @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Uncial+Antiqua&family=Merriweather:ital,wght@0,400;0,600;1,400&display=swap'); */
 
 /* ======== PÁGINA LA COMUNIDAD ======== */
 
@@ -17,6 +18,22 @@
   padding: 3rem 1rem;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 20, 20, 0.8) 100%);
   border-bottom: 1px solid rgba(197, 142, 60, 0.3);
+}
+
+/* Agregar animación de entrada */
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-content {
@@ -201,9 +218,10 @@
     font-size: 1.5rem;
   }
   
+  .comunidad-hero,
   .descripcion-section,
   .cita-section {
-    padding: 3rem 1rem;
+    padding: 3rem 1rem; /* Espaciado uniforme */
   }
 }
 
@@ -228,8 +246,11 @@
   }
 }
 
-/* ======== ELIMINAR TODA ESTA SECCIÓN ======== */
-/* 
+/* ELIMINAR el @import (ya está en index.css) */
+/* ELIMINAR todo el código comentado de filtros */
+/* ELIMINAR duplicados en media queries */
+
+/* Mantener solo la estructura limpia sin duplicados */
 .filtros-section {
   padding: 3rem 1rem;
   background: rgba(0, 0, 0, 0.3);
@@ -278,4 +299,3 @@
   box-shadow: 0 4px 15px rgba(197, 142, 60, 0.3);
   transform: translateY(-2px);
 }
-*/

@@ -110,6 +110,9 @@ function LaComunidad() {
             <p className="hero-description">
               Nueve caminantes unidos por un destino común: destruir el Anillo Único y salvar la Tierra Media
             </p>
+            {/* Agregar después del Header */}
+    
+       
             <div className="hero-stats">
               <div className="stat-item">
                 <span className="stat-number">9</span>
@@ -124,6 +127,7 @@ function LaComunidad() {
                 <span className="stat-label">Misión</span>
               </div>
             </div>
+            */
           </div>
         </section>
 
@@ -160,3 +164,11 @@ function LaComunidad() {
 }
 
 export default LaComunidad;
+/* MOVER Sauron y Gollum a una sección separada "Enemigos" o eliminarlos */
+{/* Agregar filtros más específicos */}
+<div className="filtros-avanzados">
+  <button className="filtro-btn active">Todos</button>
+  <button className="filtro-btn">La Comunidad</button>
+  <button className="filtro-btn">Aliados</button>
+  <button className="filtro-btn">Enemigos</button>
+</div>
